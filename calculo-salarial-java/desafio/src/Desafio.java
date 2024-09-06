@@ -15,12 +15,23 @@ public class Desafio {
         float valorImposto = 0;
         if (valorSalario >= 0 && valorSalario <= 1100) {
             // Atribuir a aliquota de 5% mediante ao salário:
-            valorImposto = 5f * valorSalario;
+            valorImposto = 0.5f * valorSalario;
+        }
+        if (valorSalario >= 1100.01 && valorSalario <= 2500) {
+            // Atribuir a aliquota de 10% mediante ao salário:
+            valorImposto = 0.10f * valorSalario;
+        }
+        if (valorSalario > 2501) {
+            // Atribuir a aliquota de 15% mediante ao salário:
+            valorImposto = 0.15f * valorSalario;
         }
         // TODO Criar as demais condições para as aliquotas de 10.00% e 15.00%.
 
         // Calcula e imprime a saída (com 2 casas decimais):
         float saida = valorSalario - valorImposto + valorBeneficios;
         System.out.println(String.format("%.2f", saida));
+
+        leitorDeEntradas.close();
     }
+
 }
