@@ -11,10 +11,16 @@ public class Main {
 
         // TODO: Itere sobre os serviços contratados
         for (String servico : servicosContratados) {
-        }
-
-        // TODO: Verifique se todos os serviços foram contratados
-        if () {
+            servico = servico.trim(); // Removendo espaços em branco
+            if (servico.equalsIgnoreCase("movel")) {
+                movelContratado = true;
+            } else if (servico.equalsIgnoreCase("banda larga")) {
+                bandaLargaContratada = true;
+            } else if (servico.equalsIgnoreCase("tv")) {
+                tvContratada = true;
+            }
+        }// TODO: Verifique se todos os serviços foram contratados
+        if (movelContratado && bandaLargaContratada && tvContratada) {
             return "Combo Completo";
         } else {
             return "Combo Incompleto";
